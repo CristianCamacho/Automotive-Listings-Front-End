@@ -31,7 +31,6 @@ class VehicleListing extends Component {
     }
 
     componentDidUpdate() {
-        console.log('did update')
         console.log(this.state)
         if (this.state.selYear) {
             if (this.state.makes.length < 1) {
@@ -82,7 +81,20 @@ class VehicleListing extends Component {
                 selModel: '',
                 selOption: ''
             })
+        } else if (event.target.id == 'selMake') {
+            this.setState({
+                models: [],
+                options: [],
+                selModel: '',
+                selOption: ''
+            })
+        } else if (event.target.id == 'selModel') {
+            this.setState({
+                options: [],
+                selOption: ''
+            })
         }
+
         this.setState({
             [event.target.id]: event.target.value
         })
