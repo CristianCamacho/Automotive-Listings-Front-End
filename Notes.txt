@@ -4,13 +4,15 @@ Tailwind.css
 
 Landing Page
     Every listed car
-    Links to create listing Page
+    Links to 
+        create listing Page
+        sign in
+
 
 Listing Page
     Requests informatoin from user. 
-        Vehicle, veihcle data
-
-
+        Vehicle (make,year,model,ect)
+        info (mileage, accidents, location)
 
 
 
