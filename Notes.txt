@@ -6,16 +6,27 @@ Landing Page
     Every listed car
     Links to 
         create listing Page
+        current users posted listings
+        edit account
         sign in
+        sign out
+        create account
+        about
 
 
 Listing Page
     Requests informatoin from user. 
         Vehicle (make,year,model,ect)
         info (mileage, accidents, location)
+    Use supabase errors for bad inptus
+
+Edit listing
+Remove listing - Delete or marked as sold
+
 
 
 
 Future
     Add vin decoder
     Add vin lookup 
+    Uploadable images

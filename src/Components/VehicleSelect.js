@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Select } from '@supabase/ui'
 
-class VehicleSelectForm extends Component {
+class VehicleSelect extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -104,32 +104,32 @@ class VehicleSelectForm extends Component {
         return (
             <div>
                 <form >
-                    <Select id='selYear' labl='Select Year' onChange={this.handleChangeAndSelection}>
-                        <Select.Option>Select Year</Select.Option>
+                    <Select id='selYear' label='Select Year' className='py-2' onChange={this.handleChangeAndSelection}>
+                        <Select.Option>Year</Select.Option>
                         {
                             this.state.years.map((year) => {
                                 return (<Select.Option>{year}</Select.Option>)
                             })
                         }
                     </Select>
-                    <Select id='selMake' labl='Select Make' onChange={this.handleChangeAndSelection}>
-                        <Select.Option>Select Makes</Select.Option>
+                    <Select id='selMake' label='Select Make' className='py-2' onChange={this.handleChangeAndSelection}>
+                        <Select.Option>Make</Select.Option>
                         {
                             this.state.makes.map((make) => {
                                 return (<Select.Option>{make}</Select.Option>)
                             })
                         }
                     </Select>
-                    <Select id='selModel' labl='Select Model' onChange={this.handleChangeAndSelection}>
-                        <Select.Option>Select Model</Select.Option>
+                    <Select id='selModel' label='Select Model' className='py-2' onChange={this.handleChangeAndSelection}>
+                        <Select.Option>Model</Select.Option>
                         {
                             this.state.models.map((model) => {
                                 return (<Select.Option>{model}</Select.Option>)
                             })
                         }
                     </Select>
-                    <Select id='selOption' labl='Select Option' onChange={this.handleChangeAndSelection}>
-                        <Select.Option>Select Option</Select.Option>
+                    <Select id='selOption' label='Select Option' className='py-2' onChange={this.handleChangeAndSelection}>
+                        <Select.Option>Option</Select.Option>
                         {
                             this.state.options.map((option) => {
                                 return (<Select.Option>{option}</Select.Option>)
@@ -143,4 +143,4 @@ class VehicleSelectForm extends Component {
     }
 }
 
-export default VehicleSelectForm
+export default VehicleSelect
