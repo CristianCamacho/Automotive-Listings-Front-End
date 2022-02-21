@@ -24,7 +24,7 @@ class VehicleListing extends Component {
                         <Input label='Location by zipcode' id='zipLocation' className='py-2' />
                         <Input label='VIN' id='mileage' className='py-2' />
                         <Input label='Listing price' id='price' className='py-2' />
-                        <Select label='Does the vehicle have a lien?' id='mileage' className='py-2'>
+                        <Select label='Does the vehicle have a lien?' id='lien' className='py-2'>
                             <Select.Option></Select.Option>
                             <Select.Option>Yes</Select.Option>
                             <Select.Option>No</Select.Option>
