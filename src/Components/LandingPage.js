@@ -20,7 +20,6 @@ class LandingPage extends Component {
                 listings: data.listings
             })
         })
-        
     }
 
     render() {
