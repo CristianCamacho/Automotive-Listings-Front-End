@@ -12,7 +12,7 @@ class Signin extends Component {
         return (
             <div>
                 <Header />
-                <div class='flex items-center justify-center flex-col'>
+                <div class='flex items-center justify-center flex-col min-h-screen'>
                     <form class='w-3/4 lg:w-2/3 px-8 py-10 flex items-center justify-center flex-col'>
                         <div className='w-2/4 flex-col justify-items-center'>
                             <Input className='mb-6' label='User' onChange={this.handleOnChange} type='text' name='username' id='username' />

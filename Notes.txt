@@ -1,7 +1,3 @@
-No users to start
-fueleconomy.gov api
-Tailwind.css
-
 Landing Page
     Every listed car
     Links to 
@@ -22,8 +18,6 @@ Listing Page
 
 Edit listing
 Remove listing - Delete or marked as sold
-
-
 
 
 Future

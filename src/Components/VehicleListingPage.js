@@ -14,7 +14,7 @@ class VehicleListing extends Component {
 
     render() {
         return (
-            <div>
+            <div className='min-h-screen'>
                 <div className='flex flex-row justify-center'>
                     <div className='p-2 px-10'>
                         <VehicleSelect handleChange={this.handleSelChange} />

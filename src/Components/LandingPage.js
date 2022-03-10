@@ -24,7 +24,7 @@ class LandingPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className='min-h-screen'>
                 <Header />
                 <VehicleListings listings={this.state.listings}/>
             </div>

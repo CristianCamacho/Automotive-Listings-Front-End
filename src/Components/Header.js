@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Header() {
     return (
-        <div className='pb-20'>
-            <header className='z-10 w-full fixed flex flex-row  items-center px-4 md:px-12 h-20 bg-white'>
+        <header className='pb-20'>
+            <div className='z-10 w-full fixed flex flex-row  items-center px-4 md:px-12 h-20 bg-celadon-blue'>
                 <div className=''>
                     <p className='text-3xl'>Automotive Listings</p>
                 </div>
@@ -18,8 +18,7 @@ export default function Header() {
                         <a>About</a>
                     </div>
                 </div>
-                <div className='absolute mt-16 inset-4 blur-3xl h-3 bg-gradient-to-b from-white ...'></div>
-            </header>
-        </div>
+            </div>
+        </header>
     )
 }
