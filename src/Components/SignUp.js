@@ -1,6 +1,4 @@
 import React, { Component } from "react"
-import Header from "./Header"
-import Footer from "./Footer"
 import { Input, Button } from '@supabase/ui'
 
 class SignUp extends Component {

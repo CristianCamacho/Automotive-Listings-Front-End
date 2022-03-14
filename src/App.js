@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LandingPage from './Components/LandingPage'
+import VehicleListingCreate from './Components/VehicleListingCreate'
 import SignIn from './Components/SignIn'
 import SignUp from './Components/SignUp'
 import Footer from './Components/Footer'
@@ -10,7 +11,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <SignIn />
+        <VehicleListingCreate />
         <Footer />
       </div>
     )
