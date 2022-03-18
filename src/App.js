@@ -1,20 +1,15 @@
 import React, { Component } from 'react'
-import LandingPage from './Components/LandingPage'
+import LandingPage from './Components/Landing'
 import VehicleListingCreate from './Components/VehicleListingCreate'
-import SignIn from './Components/SignIn'
-import SignUp from './Components/SignUp'
-import Footer from './Components/Footer'
-import Header from './Components/Header'
+import SignInPage from './Components/SignInPage'
 
-BACKEND = process.env.REACT_APP_BACKEND
+let BACKEND = process.env.REACT_APP_BACKEND
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <VehicleListingCreate BACKEND={BACKEND} />
-        <Footer />
+        <SignInPage BACKEND={BACKEND} />
       </div>
     )
   }

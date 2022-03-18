@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from './Header'
+import Footer from './Footer'
 import VehicleListings from './VehicleListings'
 
 class LandingPage extends Component {
@@ -27,6 +28,7 @@ class LandingPage extends Component {
             <div className='min-h-screen'>
                 <Header />
                 <VehicleListings listings={this.state.listings}/>
+                <Footer />
             </div>
         )
     }

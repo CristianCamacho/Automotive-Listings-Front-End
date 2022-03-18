@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Input, Button } from '@supabase/ui'
 
-class Signin extends Component {
+class SignIn extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -37,26 +37,22 @@ class Signin extends Component {
 
     render() {
         return (
-            <div>
-                <div class='flex items-center justify-center flex-col min-h-screen'>
-                    <form class='w-3/4 lg:w-2/3 px-8 py-10 flex items-center justify-center flex-col' onSubmit={this.submitForm}>
-                        <div className='w-2/4 flex-col justify-items-center'>
-                            <Input className='mb-6' label='User' onChange={this.handleOnChange} type='text' name='username' id='username' />
-                            <Input className='mb-6' label='Password' onChange={this.handleOnChange} type='password' name='password' id='password' />
-                        </div>
-                        <div className='flex flex-row'>
-                            <div>
-                                <Button className='m-2' >Log In</Button>
-                            </div>
-                            <div>
-                                <Button className='m-2' >Create Account</Button>
-                            </div>
-                        </div>
-                    </form>
+            <form class='w-3/4 lg:w-2/3 px-8 py-10 flex items-center justify-center flex-col' onSubmit={this.submitForm}>
+                <div className='w-2/4 flex-col justify-items-center'>
+                    <Input className='mb-6' label='User' onChange={this.handleOnChange} type='text' name='username' id='username' />
+                    <Input className='mb-6' label='Password' onChange={this.handleOnChange} type='password' name='password' id='password' />
                 </div>
-            </div>
+                <div className='flex flex-row'>
+                    <div>
+                        <Button className='m-2' >Log In</Button>
+                    </div>
+                    <div>
+                        <Button className='m-2' >Create Account</Button>
+                    </div>
+                </div>
+            </form>
         )
     }
 }
 
-export default Signin
+export default SignIn
