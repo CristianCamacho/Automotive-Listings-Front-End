@@ -11,7 +11,7 @@ class LandingPage extends Component {
     }
 
     componentDidMount() {
-        fetch(this.props.BACKEND + '/api/v1/listings/get_listings')
+        fetch('http://localhost:5000/api/v1/listings/get_listings')
         .then(res => {
             return res.json()
         }).then(data => {

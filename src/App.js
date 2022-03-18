@@ -6,15 +6,12 @@ import SignUp from './Components/SignUp'
 import Footer from './Components/Footer'
 import Header from './Components/Header'
 
-let BACKEND = process.env.REACT_APP_BACKEND
-
 class App extends Component {
   render() {
-    console.log(BACKEND)
     return (
       <div>
         <Header />
-        <VehicleListingCreate BACKEND={BACKEND} />
+        <VehicleListingCreate />
         <Footer />
       </div>
     )
