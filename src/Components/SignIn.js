@@ -18,7 +18,7 @@ class Signin extends Component {
 
     submitForm = (event) => {
         event.preventDefault()
-        fetch('http://localhost:5000/api/v1/users/login', {
+        fetch(this.props.BACKEND + '/api/v1/users/login', {
             method: 'POST',
             credentials: 'include',
             headers: {

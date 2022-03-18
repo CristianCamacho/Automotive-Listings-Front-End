@@ -18,7 +18,7 @@ class SignUp extends Component {
 
     submitForm = (event) => {
         event.preventDefault()
-        fetch('http://localhost:5000/api/v1/users/create_user', {
+        fetch(this.props.BACKEND + '/api/v1/users/create_user', {
             method: 'POST',
             credentials: 'include',
             headers: {

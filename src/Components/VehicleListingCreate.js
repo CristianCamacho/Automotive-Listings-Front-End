@@ -49,12 +49,12 @@ class VehicleListingCreate extends Component {
                 [event.target.id]: event.target.value
             })
         }
-        
+        console.log(this.state)
     }
 
     componentDidMount() {
         if (this.state.years.length < 1) {
-            fetch('http://localhost:5000/api/v1/auto_info/get_years')
+            fetch(this.props.BACKEND + '/api/v1/auto_info/get_years')
                 .then(res => {
                     return res.json()
                 }).then(data => {
@@ -68,7 +68,7 @@ class VehicleListingCreate extends Component {
     componentDidUpdate() {
         if (this.state.selYear) {
             if (this.state.makes.length < 1) {
-                fetch('http://localhost:5000/api/v1/auto_info/get_makes?year=' + this.state.selYear)
+                fetch(this.props.BACKEND + '/api/v1/auto_info/get_makes?year=' + this.state.selYear)
                     .then(res => {
                         return res.json()
                     }).then(data => {
@@ -77,7 +77,7 @@ class VehicleListingCreate extends Component {
                         })
                     })
             } else if (this.state.selMake && this.state.models.length < 1) {
-                fetch('http://localhost:5000/api/v1/auto_info/get_models?year=' + this.state.selYear + '&make=' + this.state.selMake)
+                fetch(this.props.BACKEND + '/api/v1/auto_info/get_models?year=' + this.state.selYear + '&make=' + this.state.selMake)
                     .then(res => {
                         return res.json()
                     }).then(data => {
@@ -86,7 +86,7 @@ class VehicleListingCreate extends Component {
                         })
                     })
             } else if (this.state.selMake && this.state.selModel && this.state.options.length < 1) {
-                fetch('http://localhost:5000/api/v1/auto_info/get_options?year=' + this.state.selYear + '&make=' + this.state.selMake + '&model=' + this.state.selModel)
+                fetch(this.props.BACKEND + '/api/v1/auto_info/get_options?year=' + this.state.selYear + '&make=' + this.state.selMake + '&model=' + this.state.selModel)
                     .then(res => {
                         return res.json()
                     }).then(data => {
@@ -108,7 +108,7 @@ class VehicleListingCreate extends Component {
     formSubmition = (event) => {
         event.preventDefault()
         console.log(this.state)
-        fetch('http://localhost:5000/api/v1/listings/create_listing', {
+        fetch(this.props.BACKEND + '/api/v1/listings/create_listing', {
             method: 'POST',
             credentials: 'include',
             headers: {
