@@ -37,23 +37,21 @@ class SignUp extends Component {
 
     render() {
         return (
-            <div class='flex items-center justify-center flex-col min-h-screen'>
-                <form class='w-3/4 lg:w-2/3 px-8 py-10 flex items-center justify-center flex-col' onSubmit={this.submitForm}>
-                    <div className='w-2/4 flex-col justify-items-center'>
-                        <Input className='mb-6' label='User' onChange={this.handleOnChange} type='text' name='username' id='username' />
-                        <Input className='mb-6' label='Password' onChange={this.handleOnChange} type='password' name='password' id='password' />
-                        <Input className='mb-6' label='Verify Password' onChange={this.handleOnChange} type='password' name='vPassword' id='vPassword' />
+            <form class='w-3/4 lg:w-2/3 px-8 py-10 flex items-center justify-center flex-col' onSubmit={this.submitForm}>
+                <div className='w-2/4 flex-col justify-items-center'>
+                    <Input className='mb-6' label='User' onChange={this.handleOnChange} type='text' name='username' id='username' />
+                    <Input className='mb-6' label='Password' onChange={this.handleOnChange} type='password' name='password' id='password' />
+                    <Input className='mb-6' label='Verify Password' onChange={this.handleOnChange} type='password' name='vPassword' id='vPassword' />
+                </div>
+                <div className='flex flex-row'>
+                    <div>
+                        <Button className='m-2' >Create Account</Button>
                     </div>
-                    <div className='flex flex-row'>
-                        <div>
-                            <Button className='m-2' >Create Account</Button>
-                        </div>
-                        <div>
-                            <Button className='m-2' >Sign In</Button>
-                        </div>
+                    <div>
+                        <Button className='m-2' >Sign In</Button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         )
     }
 }

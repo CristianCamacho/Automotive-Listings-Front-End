@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import SignIn from './SignIn'
 import Header from './Header'
 import Footer from './Footer'
+import SignUp from './SignUp'
 
-class SignInPage extends Component {
+class SignUpPage extends Component {
     render() {
         return (
             <div>
                 <Header />
-                <h1>Sign Up</h1>
+                <h1>SignUp</h1>
                 <div class='flex items-center justify-center flex-col min-h-screen'>
-                    <SignIn BACKEND={this.props.BACKEND} />
+                    <SignUp />
                 </div>
                 <Footer />
             </div>
@@ -18,4 +18,4 @@ class SignInPage extends Component {
     }
 }
 
-export default SignInPage
+export default SignUpPage
