@@ -8,7 +8,6 @@ class SignInPage extends Component {
         return (
             <div>
                 <Header />
-                <h1>Sign Up</h1>
                 <div class='flex items-center justify-center flex-col min-h-screen'>
                     <SignIn BACKEND={this.props.BACKEND} />
                 </div>

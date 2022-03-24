@@ -9,7 +9,7 @@ class VehicleListings extends Component {
         if(this.props.listings.length > 0) {
             return (
                 <div className='flex flex-row justify-center'>
-                    <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-5/6'>
+                    <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-5/6 pb-40'>
                         {
                             
                             this.props.listings.map(listing => {

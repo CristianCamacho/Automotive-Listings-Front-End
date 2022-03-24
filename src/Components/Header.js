@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 export default function Header() {
     return (
         <header className='pb-20'>
@@ -8,15 +8,15 @@ export default function Header() {
                     <p className='text-3xl'>Automotive Listings</p>
                 </div>
                 <div className='flex justify-around w-full relative'>
-                    <div className='flex flex-row justify-around w-full lg:w-3/4' >
-                        <a>Home</a>
+                    <nav className='flex flex-row justify-around w-full lg:w-3/4' >
+                        <Link to='/'>Home</Link>
                         <p>|</p>
-                        <a>Sign in</a>
+                        <Link to='/signin'>Sign in</Link>
                         <p>|</p>
-                        <a>Create Listing</a>
+                        <Link to='/createlisting'>Create Listing</Link>
                         <p>|</p>
-                        <a>About</a>
-                    </div>
+                        <Link to=''>About</Link>
+                    </nav>
                 </div>
             </div>
         </header>
