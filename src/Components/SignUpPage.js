@@ -10,7 +10,7 @@ class SignUpPage extends Component {
                 <Header />
                 <h1>SignUp</h1>
                 <div class='flex items-center justify-center flex-col min-h-screen'>
-                    <SignUp />
+                    <SignUp BACKEND={this.props.BACKEND}/>
                 </div>
                 <Footer />
             </div>
