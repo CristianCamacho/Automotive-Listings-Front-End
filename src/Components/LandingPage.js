@@ -12,7 +12,7 @@ class LandingPage extends Component {
     }
 
     componentDidMount() {
-        fetch(this.process.BACKEND + '/api/v1/listings/get_listings')
+        fetch(this.props.BACKEND + '/api/v1/listings/get_listings')
         .then(res => {
             return res.json()
         }).then(data => {
