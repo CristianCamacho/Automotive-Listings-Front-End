@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card } from '@supabase/ui'
 import VehiclePlaceholder from '../Images/VehiclePlaceholder.png'
+
 class VehicleListings extends Component {
     render() {
         return (
