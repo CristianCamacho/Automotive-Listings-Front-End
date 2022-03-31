@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import SignIn from './SignIn'
-import Header from './Header'
-import Footer from './Footer'
 
 class SignInPage extends Component {
     render() {

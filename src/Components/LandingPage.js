@@ -14,7 +14,6 @@ class LandingPage extends Component {
         .then(res => {
             return res.json()
         }).then(data => {
-            console.log(data.listings)
             this.setState({
                 listings: data.listings
             })
