@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Card } from '@supabase/ui'
-import Footer from './Footer'
 import VehiclePlaceholder from '../Images/VehiclePlaceholder.png'
 
 class VehicleListings extends Component {

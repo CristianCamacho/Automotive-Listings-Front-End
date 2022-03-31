@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Header from './Components/Header'
+import Footer from './Components/Footer'
 import LandingPage from './Components/LandingPage'
 import SignInPage from './Components/SignInPage'
 import SignUpPage from './Components/SignUpPage'
@@ -19,6 +21,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <Header />
         <Routes>
           <Route path='/' element={<LandingPage BACKEND={this.state.BACKEND}/>}/>
           <Route path='/signin' element={<SignInPage BACKEND={this.state.BACKEND}/>}/>
@@ -26,6 +29,7 @@ class App extends Component {
           <Route path='/createlisting' element={<CreateListingPage BACKEND={this.state.BACKEND}/>}/>
           <Route path='*' element={<ErrorPage />} />
         </Routes>
+        <Footer />
       </Router>
     )
   }
