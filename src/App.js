@@ -6,7 +6,7 @@ import SignInPage from './Components/SignInPage'
 import SignUpPage from './Components/SignUpPage'
 import CreateListingPage from './Components/CreateListingPage'
 import ErrorPage from './Components/ErrorPage'
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 class App extends Component {
   constructor(props) {
@@ -55,6 +55,7 @@ class App extends Component {
   }
 
   logout = () => {
+    console.log('logout click')
     fetch(this.state.BACKEND + '/api/v1/users/logout', {
       method: 'GET',
       credentials: 'include',
@@ -73,7 +74,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Header logout={this.logout} />
+        <Header loggedIn={this.state.loggedIn} logout={this.logout} />
         <Routes>
           <Route path='/' element={<LandingPage loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} />
           <Route path='/signin' element={<SignInPage loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} getCurrentUser={this.getCurrentUser} />} />

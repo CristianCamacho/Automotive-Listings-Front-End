@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom'
+import HeaderNav from './HeaderNav'
 
 class Header extends Component {
 
@@ -11,17 +11,7 @@ class Header extends Component {
                         <p className='text-3xl'>Automotive Listings</p>
                     </div>
                     <div className='flex justify-around w-full relative'>
-                        <nav className='flex flex-row justify-around w-full lg:w-3/4' >
-                            <Link to='/'>Home</Link>
-                            <p>|</p>
-                            <Link to='/signin'>Sign in</Link>
-                            <p>|</p>
-                            <Link to='/' onClick={this.props.logout}>Logout</Link>
-                            <p>|</p>
-                            <Link to='/createlisting'>Create Listing</Link>
-                            <p>|</p>
-                            <Link to=''>About</Link>
-                        </nav>
+                        <HeaderNav logout={this.props.logout} loggedIn={this.props.loggedIn}/>
                     </div>
                 </div>
             </header>

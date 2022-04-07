@@ -47,9 +47,6 @@ class SignUp extends Component {
                     <div>
                         <Button className='m-2' >Create Account</Button>
                     </div>
-                    <div>
-                        <Button className='m-2' >Sign In</Button>
-                    </div>
                 </div>
             </form>
         )
