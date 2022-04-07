@@ -32,7 +32,8 @@ class SignIn extends Component {
             return res.json()
         }).then(data => {
             console.log(data)
-        })
+            this.props.getCurrentUser()
+        })        
     }
 
     render() {

@@ -6,7 +6,7 @@ class SignInPage extends Component {
         return (
             <div>
                 <div class='flex items-center justify-center flex-col min-h-screen'>
-                    <SignIn BACKEND={this.props.BACKEND} />
+                    <SignIn getCurrentUser={this.props.getCurrentUser} BACKEND={this.props.BACKEND} />
                 </div>
             </div>
         )
