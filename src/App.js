@@ -6,7 +6,7 @@ import SignInPage from './Components/SignInPage'
 import SignUpPage from './Components/SignUpPage'
 import CreateListingPage from './Components/CreateListingPage'
 import ErrorPage from './Components/ErrorPage'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
+  getCurrentUser = () => {
     fetch(this.state.BACKEND + '/api/v1/users/get_current_user', {
       method: 'GET',
       credentials: 'include',
@@ -31,6 +31,10 @@ class App extends Component {
       })
       console.log(data)
     })
+  }
+
+  componentDidMount() {
+    this.getCurrentUser()
   }
 
   setUser = (username) => {
@@ -53,6 +57,8 @@ class App extends Component {
     }).then(data => {
       console.log(data)
     })
+
+    this.getCurrentUser()
   }
 
   render() {

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom'
 
 class Header extends Component {
+
     render() {
         return (
             <header className='pb-20'>
@@ -15,7 +16,7 @@ class Header extends Component {
                             <p>|</p>
                             <Link to='/signin'>Sign in</Link>
                             <p>|</p>
-                            <a href='#' onClick={this.props.logout}>Logout</a>
+                            <Link to='/' onClick={this.props.logout}>Logout</Link>
                             <p>|</p>
                             <Link to='/createlisting'>Create Listing</Link>
                             <p>|</p>
