@@ -3,7 +3,7 @@ import Header from './Components/Header'
 import Footer from './Components/Footer'
 import LandingPage from './Components/LandingPage'
 import SignInPage from './Components/SignInPage'
-import SignUpPage from './Components/SignUpPage'
+import SignUp from './Components/SignUp'
 import VehicleListingCreate from './Components/VehicleListingCreate'
 // import Listing from './Components/Listing'
 import ErrorPage from './Components/ErrorPage'
@@ -79,7 +79,7 @@ class App extends Component {
         <Routes>
           <Route path='/' element={<LandingPage loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} />
           <Route path='/signin' element={<SignInPage loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} getCurrentUser={this.getCurrentUser} />} />
-          <Route path='/signup' element={<SignUpPage loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} />
+          <Route path='/signup' element={<SignUp loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} />
           <Route path='/createlisting' element={<VehicleListingCreate loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} />
           {/* <Route path='/listing/:id' element={<Listing loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} /> */}
           <Route path='*' element={<ErrorPage />} />
