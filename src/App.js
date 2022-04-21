@@ -5,6 +5,7 @@ import LandingPage from './Components/LandingPage'
 import SignInPage from './Components/SignInPage'
 import SignUpPage from './Components/SignUpPage'
 import CreateListingPage from './Components/CreateListingPage'
+// import Listing from './Components/Listing'
 import ErrorPage from './Components/ErrorPage'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
@@ -80,6 +81,7 @@ class App extends Component {
           <Route path='/signin' element={<SignInPage loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} getCurrentUser={this.getCurrentUser} />} />
           <Route path='/signup' element={<SignUpPage loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} />
           <Route path='/createlisting' element={<CreateListingPage loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} />
+          {/* <Route path='/listing/:id' element={<Listing loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} /> */}
           <Route path='*' element={<ErrorPage />} />
         </Routes>
         <Footer />
