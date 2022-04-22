@@ -1,22 +1,13 @@
-import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import React, { useState} from 'react'
+import { useParams } from 'react-router'
 
-class Listing extends Component {
+export default function Listing(props) {
 
-    componentDidMount() {
-        const { id } = this.props.match.params;
-        this.fetchData(id);
-    }
+    let {id} = useParams()
 
-    render() {
-        console.log(this.props)
-        
-        return (
-            <div>
-                <h1>Title</h1>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <p>yee{id}</p>
+        </div>
+    )
 }
-
-export default withRouter(Listing)

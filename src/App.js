@@ -1,26 +1,22 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import LandingPage from './Components/LandingPage'
 import SignIn from './Components/SignIn'
 import SignUp from './Components/SignUp'
 import VehicleListingCreate from './Components/VehicleListingCreate'
-// import Listing from './Components/Listing'
+import Listing from './Components/Listing'
 import ErrorPage from './Components/ErrorPage'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      BACKEND: process.env.REACT_APP_BACKEND,
-      loggedIn: false
-    }
-  }
+export default function App() {
+  const [BACKEND] = useState(process.env.REACT_APP_BACKEND)
+  const [username, setUsername] = useState()
+  const [loggedIn, setLogedIn] = useState()
 
-  getCurrentUser = () => {
+  function getCurrentUser() {
     console.log('getUser')
-    fetch(this.state.BACKEND + '/api/v1/users/get_current_user', {
+    fetch(BACKEND + '/api/v1/users/get_current_user', {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -30,34 +26,24 @@ class App extends Component {
       switch (res.status) {
         case 200:
           let data = res.json()
-          this.setState({
-            user: data.username,
-            loggedIn: true
-          })
+          setUsername(data.username)
+          setLogedIn(true)
           console.log('User is logged in.')
           break;
         case 204:
-          this.setState({
-            loggedIn: false
-          })
+          setLogedIn(false)
           console.log('User is not logged in.')
           break;
         default:
-          this.setState({
-            loggedIn: false
-          })
+          setLogedIn(false)
           console.log(res.json())
       }
     })
   }
 
-  componentDidMount() {
-    this.getCurrentUser()
-  }
-
-  logout = () => {
+  function logout() {
     console.log('logout click')
-    fetch(this.state.BACKEND + '/api/v1/users/logout', {
+    fetch(BACKEND + '/api/v1/users/logout', {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -68,26 +54,24 @@ class App extends Component {
       return res.json()
     }).then(data => {
       console.log(data)
-      this.getCurrentUser()
+      getCurrentUser()
     })
   }
 
-  render() {
-    return (
-      <Router>
-        <Header loggedIn={this.state.loggedIn} logout={this.logout} />
-        <Routes>
-          <Route path='/' element={<LandingPage loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} />
-          <Route path='/signin' element={<SignIn loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} getCurrentUser={this.getCurrentUser} />} />
-          <Route path='/signup' element={<SignUp loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} />
-          <Route path='/createlisting' element={<VehicleListingCreate loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} />
-          {/* <Route path='/listing/:id' element={<Listing loggedIn={this.state.loggedIn} BACKEND={this.state.BACKEND} />} /> */}
-          <Route path='*' element={<ErrorPage />} />
-        </Routes>
-        <Footer />
-      </Router>
-    )
-  }
+  useEffect(getCurrentUser)
+  
+  return (
+    <Router>
+      <Header loggedIn={loggedIn} logout={logout} />
+      <Routes>
+        <Route path='/' element={<LandingPage loggedIn={loggedIn} BACKEND={BACKEND} />} />
+        <Route path='/signin' element={<SignIn loggedIn={loggedIn} BACKEND={BACKEND} getCurrentUser={getCurrentUser} />} />
+        <Route path='/signup' element={<SignUp loggedIn={loggedIn} BACKEND={BACKEND} />} />
+        <Route path='/createlisting' element={<VehicleListingCreate loggedIn={loggedIn} BACKEND={BACKEND} />} />
+        <Route path='/listing/:id' element={<Listing loggedIn={loggedIn} BACKEND={BACKEND} />} />
+        <Route path='*' element={<ErrorPage />} />
+      </Routes>
+      <Footer />
+    </Router>
+  )
 }
-
-export default App
