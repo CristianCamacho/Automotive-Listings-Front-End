@@ -16,6 +16,8 @@ export default function SignIn(props) {
             case 'password':
                 setPassword(event.target.value)
                 break;
+            default:
+                break;
         }
     }
 
@@ -34,8 +36,7 @@ export default function SignIn(props) {
         }).then(res => {
             return res.json()
         }).then(data => {
-            console.log(data)
-            if (data.status == 202) {
+            if (data.status === 202) {
                 setRedir(true)
             }
             props.getCurrentUser()

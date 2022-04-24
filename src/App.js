@@ -11,11 +11,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 export default function App() {
   const [BACKEND] = useState(process.env.REACT_APP_BACKEND)
-  const [username, setUsername] = useState()
   const [loggedIn, setLogedIn] = useState()
 
   function getCurrentUser() {
-    console.log('getUser')
     fetch(BACKEND + '/api/v1/users/get_current_user', {
       method: 'GET',
       credentials: 'include',
@@ -25,24 +23,18 @@ export default function App() {
     }).then(res => {
       switch (res.status) {
         case 200:
-          let data = res.json()
-          setUsername(data.username)
           setLogedIn(true)
-          console.log('User is logged in.')
           break;
         case 204:
           setLogedIn(false)
-          console.log('User is not logged in.')
           break;
         default:
           setLogedIn(false)
-          console.log(res.json())
       }
     })
   }
 
   function logout() {
-    console.log('logout click')
     fetch(BACKEND + '/api/v1/users/logout', {
       method: 'GET',
       credentials: 'include',
@@ -53,7 +45,6 @@ export default function App() {
     ).then(res => {
       return res.json()
     }).then(data => {
-      console.log(data)
       getCurrentUser()
     })
   }

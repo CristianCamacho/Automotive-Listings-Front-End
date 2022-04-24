@@ -1,32 +1,21 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import VehicleListings from './VehicleListings'
 
-class LandingPage extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            listings: []
-        }
-    }
+export default function LandingPage(props) {
+    const [listings, setListings] = useState([])
 
-    componentDidMount() {
-        fetch(this.props.BACKEND + '/api/v1/listings/get_listings')
-        .then(res => {
-            return res.json()
-        }).then(data => {
-            this.setState({
-                listings: data.listings
+    useEffect(() => {
+        fetch(props.BACKEND + '/api/v1/listings/get_listings')
+            .then(res => {
+                return res.json()
+            }).then(data => {
+                setListings(data.listings)
             })
-        })
-    }
+    }, [])
 
-    render() {
-        return (
-            <div className='min-h-screen'>
-                <VehicleListings listings={this.state.listings}/>
-            </div>
-        )
-    }
+    return (
+        <div className='min-h-screen'>
+            <VehicleListings listings={listings} />
+        </div>
+    )
 }
-
-export default LandingPage

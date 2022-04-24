@@ -105,7 +105,7 @@ class VehicleListingCreate extends Component {
         })
     }
 
-    formSubmition = (event) => {
+    formSubmit = (event) => {
         event.preventDefault()
         console.log(this.state)
         fetch(this.props.BACKEND + '/api/v1/listings/create_listing', {
