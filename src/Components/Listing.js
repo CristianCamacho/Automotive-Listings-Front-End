@@ -21,7 +21,6 @@ export default function Listing(props) {
         })
     }, [])
 
-    console.log(listing)
     if (listing != null) {
         return (
             <div className='min-h-screen flex justify-center'>
