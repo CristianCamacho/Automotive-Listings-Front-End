@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Input, Select } from "@supabase/ui"
+import { Input, Select, Button } from "@supabase/ui"
 
 export default function VehicleListingCreate(props) {
     const [years, setYears] = useState([])
@@ -11,6 +11,32 @@ export default function VehicleListingCreate(props) {
     const [selMake, setMake] = useState('')
     const [selModel, setModel] = useState('')
     const [selOption, setOption] = useState('')
+
+    const [selLien, setLien] = useState()
+    const [mileage, setMileage] = useState()
+    const [vin, setVin] = useState()
+    const [price, setPrice] = useState()
+    const [location, setLocation] = useState()
+
+    function handleMileage(event) {
+        setMileage(event.target.value)
+    }
+
+    function handleVin(event) {
+        setVin(event.target.value)
+    }
+
+    function handlePrice(event) {
+        setPrice(event.target.value)
+    }
+
+    function handleLien(event) {
+        setLien(event.target.value)
+    }
+
+    function handleLocatoin(event) {
+        setLocation(event.target.value)
+    }
 
     function handleChangeAndSelection(event) {
         if (event.target.id === 'selYear') {
@@ -46,6 +72,31 @@ export default function VehicleListingCreate(props) {
                 }
                 break;
         }
+    }
+
+    function formSubmit(event) {
+        event.preventDefault()
+
+        console.log(selYear, selMake, selModel, selOption)
+        fetch(props.BACKEND + '/api/v1/listings/create_listing', {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                govid: selOption.id,
+                lien: selLien,
+                mileage: mileage,
+                vin: vin,
+                zipcode: location,
+                price: price
+            })
+        }).then(res => {
+            return res.json()
+        }).then(data => {
+            console.log(data)
+        })
     }
 
     useEffect(() => {
@@ -87,7 +138,7 @@ export default function VehicleListingCreate(props) {
     })
 
     return (
-        <div className='container min-h-screen mx-auto'>
+        <div className='container min-h-screen mx-auto flex flex-col'>
             <form className='flex flex-row justify-center'>
                 <div className='p-2 px-10 w-1/2 lg:w-1/3'>
                     <Select id='selYear' label='Select Year' className='py-2' onChange={handleChangeAndSelection}>
@@ -124,18 +175,20 @@ export default function VehicleListingCreate(props) {
                     </Select>
                 </div>
                 <div className='p-2 px-10 w-1/2 lg:w-1/3'>
-                    <Input label='Mileage' id='mileage' className='py-2' />
-                    <Input label='Zipcode Location' id='zipLocation' className='py-2' />
-                    <Input label='VIN' id='mileage' className='py-2' />
-                    <Input label='Listing price' id='price' className='py-2' />
-                    <Select label='Does the vehicle have a lien?' id='lien' className='py-2'>
-                        <Select.Option>Lien</Select.Option>
-                        <Select.Option>Yes</Select.Option>
-                        <Select.Option>No</Select.Option>
+                    <Input onChange={handleMileage} label='Mileage' id='mileage' className='py-2' />
+                    <Input onChange={handleLocatoin} label='Zipcode Location' id='zipLocation' className='py-2' />
+                    <Input onChange={handleVin} label='VIN' id='mileage' className='py-2' />
+                    <Input onChange={handlePrice} label='Listing price' id='price' className='py-2' />
+                    <Select onChange={handleLien} label='Does the vehicle have a lien?' id='lien' className='py-2'>
+                        <Select.Option value={null}>Lien</Select.Option>
+                        <Select.Option value={true}>Yes</Select.Option>
+                        <Select.Option value={false}>No</Select.Option>
                     </Select>
                 </div>
             </form >
+            <div className='mx-auto'>
+                <Button onClick={formSubmit}>Submit</Button>
+            </div>
         </div>
-
     )
 }
