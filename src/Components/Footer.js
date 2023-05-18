@@ -1,42 +1,37 @@
-import React from 'react'
+import '../css/Footer.css'
 
 export default function Footer() {
     return (
-        <footer className=''>
-            <div className='bg-celadon-blue -mt-40'>
-                <div className='container mx-auto flex flex-col'>
-                    <div className='h-10 flex'>
-                        <p className='self-center'>Automotive-Listings</p>
-                    </div>
-                    <div className='flex flex-row justify-evenly'>
-                        <div>
-                            <p>Projecct Links</p>
-                            <p>Front-end Repo</p>
-                            <p>Back-end Repo</p>
-                        </div>
-                        <div>
-                            <p>Tools used</p>
-                            <p>React.js</p>
-                            <p>Flask</p>
-                            <p>PostgreSQL</p>
-                        </div>
-                        <div>
-                            <p>Other Projects</p>
-                            <p>The Concert Dropout</p>
-                            <p>Auto-Listings</p>
-                            <p>Project-Manager</p>
-                            <p>Asteroids</p>
-                        </div>
-                        <div>
-                            <p>Personal Links</p>
-                            <p>LinkedIn</p>
-                            <p>GitHub</p>
-                            <p>Portfolio</p>
-                        </div>
+        <footer class="footer-container">
+  <div class="container">
+    <div class="links">
+      <h2>Footer Links</h2>
+      <nav>
+        <ul>
+          <li><a href="link1">Link 1</a></li>
+          <li><a href="link2">Link 2</a></li>
+          <li><a href="link3">Link 3</a></li>
+          <li><a href="link4">Link 4</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="additional-links">
+      <h2>Additional Links</h2>
+      <nav>
+        <ul>
+          <li><a href="link5">Link 5</a></li>
+          <li><a href="link6">Link 6</a></li>
+          <li><a href="link7">Link 7</a></li>
+          <li><a href="link8">Link 8</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="copy">
+      <p>&copy; 2023 Automotive Listings. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
-                    </div>
-                </div>
-            </div>
-        </footer>
+
     )
 }

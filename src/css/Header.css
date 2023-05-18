@@ -1,0 +1,43 @@
+.header-container {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header-container .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-container .site-name {
+    margin: 0;
+  }
+  
+  .header-container .header-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .header-container .header-nav ul li {
+    margin-right: 10px;
+  }
+  
+  .header-container .header-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .header-container .header-nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .header-container .site-name {
+    margin: 0;
+    font-size: 24px; /* Adjust the font size as desired */
+    font-weight: bold; /* Optional: Add font-weight for emphasis */
+  }
+  
